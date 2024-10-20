@@ -1,4 +1,7 @@
+"""API server for 835 inflight."""
+
 import json
+import time
 from dataclasses import dataclass, field
 from os import DirEntry, scandir
 from typing import Dict, List
@@ -6,7 +9,6 @@ from typing import Dict, List
 from cachetools import TTLCache, cached
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import time
 
 app = FastAPI()
 

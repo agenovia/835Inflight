@@ -14,6 +14,9 @@ interface Props {
 }
 
 const TabViewer = ({ inflight }: Props) => {
+  const selectedTabStyle = { color: "white", bg: "blue.500" };
+  const hoverTabStyle = { bg: "blue.100", borderColor: "transparent" };
+
   return (
     <Tabs defaultIndex={1}>
       <TabList
@@ -22,9 +25,15 @@ const TabViewer = ({ inflight }: Props) => {
         justifyContent={"center"}
         alignContent={"center"}
       >
-        <Tab w="80px">Ready</Tab>
-        <Tab w="80px">Inflight</Tab>
-        <Tab w="80px">Archived</Tab>
+        <Tab _hover={hoverTabStyle} _selected={selectedTabStyle} w="80px">
+          Ready
+        </Tab>
+        <Tab _hover={hoverTabStyle} _selected={selectedTabStyle} w="80px">
+          Inflight
+        </Tab>
+        <Tab _hover={hoverTabStyle} _selected={selectedTabStyle} w="80px">
+          Archived
+        </Tab>
       </TabList>
       <TabPanels overflow={"hidden"}>
         <TabPanel>

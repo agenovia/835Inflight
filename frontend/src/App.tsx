@@ -26,7 +26,7 @@ function App() {
                         "viewer viewer"
                       `}
         templateColumns={"1fr 1fr"}
-        templateRows={"90px 1fr"}
+        templateRows={"70px 1fr"}
         h="70vh"
         w="70vw"
         gap={2}
