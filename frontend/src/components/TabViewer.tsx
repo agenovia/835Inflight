@@ -15,24 +15,27 @@ interface Props {
 
 const TabViewer = ({ inflight }: Props) => {
   return (
-    <>
-      <Tabs>
-        <TabList w="100%" justifyContent={"center"} alignContent={"center"}>
-          <Tab>Inflight</Tab>
-          <Tab>Ready</Tab>
-          <Tab>Archived</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>{inflight}</TabPanel>
-          <TabPanel>
-            <Heading>Ready</Heading>
-          </TabPanel>
-          <TabPanel>
-            <Heading>Archived</Heading>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
-    </>
+    <Tabs defaultIndex={1}>
+      <TabList
+        gap={8}
+        w="100%"
+        justifyContent={"center"}
+        alignContent={"center"}
+      >
+        <Tab w="80px">Ready</Tab>
+        <Tab w="80px">Inflight</Tab>
+        <Tab w="80px">Archived</Tab>
+      </TabList>
+      <TabPanels overflow={"hidden"}>
+        <TabPanel>
+          <Heading>Ready</Heading>
+        </TabPanel>
+        <TabPanel>{inflight}</TabPanel>
+        <TabPanel>
+          <Heading>Archived</Heading>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
   );
 };
 

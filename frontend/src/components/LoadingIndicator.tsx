@@ -11,8 +11,9 @@ const LoadingIndicator = ({ isLoading }: Props) => {
 
   return (
     <Spinner
-      thickness="6px"
-      speed="0.65s"
+      speed="1.5s"
+      thickness="2px"
+      variant={"bold"}
       emptyColor="gray.200"
       color="blue.500"
       boxSize={"200px"}

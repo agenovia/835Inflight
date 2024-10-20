@@ -16,5 +16,77 @@
       "created": 1727482208.8677497,
       "modified": 1727482208.8677497
     }
+  },
+  {
+    "fullPath": "\\foo\\bar",
+    "fileName": "ABCD_12345_2020.txt",
+    "fileFolder": "FOOBAR",
+    "stat": {
+      "created": 1727482178.410042,
+      "modified": 1727482178.410042
+    }
+  },
+  {
+    "fullPath": "\\foo\\baz",
+    "fileName": "ABCD_34567_2020.txt",
+    "fileFolder": "FOOBAZ",
+    "stat": {
+      "created": 1727482208.8677497,
+      "modified": 1727482208.8677497
+    }
+  },
+  {
+    "fullPath": "\\foo\\bar",
+    "fileName": "ABCD_12345_2020.txt",
+    "fileFolder": "FOOBAR",
+    "stat": {
+      "created": 1727482178.410042,
+      "modified": 1727482178.410042
+    }
+  },
+  {
+    "fullPath": "\\foo\\baz",
+    "fileName": "ABCD_34567_2020.txt",
+    "fileFolder": "FOOBAZ",
+    "stat": {
+      "created": 1727482208.8677497,
+      "modified": 1727482208.8677497
+    }
+  },
+  {
+    "fullPath": "\\foo\\bat",
+    "fileName": "ABCD_34567_2020.txt",
+    "fileFolder": "FOOBAZ",
+    "stat": {
+      "created": 1727482208.8677497,
+      "modified": 1727482208.8677497
+    }
+  },
+  {
+    "fullPath": "\\foo\\but",
+    "fileName": "ABCD_34567_2020.txt",
+    "fileFolder": "FOOBAZ",
+    "stat": {
+      "created": 1727482208.8677497,
+      "modified": 1727482208.8677497
+    }
+  },
+  {
+    "fullPath": "\\foo\\ploop",
+    "fileName": "ABCD_34567_2020.txt",
+    "fileFolder": "FOOBAZ",
+    "stat": {
+      "created": 1727482208.8677497,
+      "modified": 1727482208.8677497
+    }
+  },
+  {
+    "fullPath": "\\foo\\scoop",
+    "fileName": "ABCD_34567_2020.txt",
+    "fileFolder": "FOOBAZ",
+    "stat": {
+      "created": 1727482208.8677497,
+      "modified": 1727482208.8677497
+    }
   }
 ]

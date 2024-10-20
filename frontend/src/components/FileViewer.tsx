@@ -40,28 +40,28 @@ const FileEntry = ({ folder, total }: FileEntryProps) => {
       templateAreas={`"indicator count bar"`}
       templateColumns={`"100px 50px 1fr"`}
       templateRows={"60px"}
-      gap={3}
+      gap={2}
       justifyContent={"left"}
       w="100%"
-      p={4}
+      shadow="md"
+      borderRadius={10}
     >
-      <GridItem pt={6} area="indicator" sx={centeredStyle}>
+      <GridItem p={2} pt={4} area="indicator" sx={centeredStyle}>
         <Icon as={IoPieChartOutline} boxSize={8} />
       </GridItem>
-      <GridItem pt={4} area="count" sx={centeredStyle}>
+      <GridItem p={2} area="count" sx={centeredStyle}>
         <Badge
           title={`${total} file(s) in ${folder}`}
           sx={centeredStyle}
           boxSize={10}
           borderRadius={10}
-          shadow="md"
         >
           {total}
         </Badge>
       </GridItem>
-      <GridItem mt={4} area="bar" sx={centeredStyle}>
+      <GridItem area="bar" sx={centeredStyle}>
         {/* we need a file indicator */}
-        <HStack p={2} shadow={"lg"} borderRadius={10}>
+        <HStack p={2} borderRadius={10}>
           <Icon boxSize={6} as={IoFolderOpenOutline} />
           <Text>{folder}</Text>
         </HStack>

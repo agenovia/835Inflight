@@ -1,9 +1,10 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Fade, Grid, GridItem } from "@chakra-ui/react";
 import "./App.css";
 import FileViewer from "./components/FileViewer";
 import LoadingIndicator from "./components/LoadingIndicator";
-import useFetchFileStatus from "./hooks/useFetchFileStatus";
+import MenuSelector from "./components/MenuSelector";
 import TabViewer from "./components/TabViewer";
+import useFetchFileStatus from "./hooks/useFetchFileStatus";
 
 function App() {
   const { isLoading, isError, error, data } = useFetchFileStatus({
@@ -30,11 +31,19 @@ function App() {
         w="70vw"
         gap={2}
       >
-        <GridItem area="header" bgColor={"tomato"}></GridItem>
-        <GridItem area="viewer" w="inherit" h="inherit">
+        <GridItem area="header">
+          {!isLoading && (
+            <Fade in={!isLoading}>
+              <MenuSelector />
+            </Fade>
+          )}
+        </GridItem>
+        <GridItem area="viewer">
           <LoadingIndicator isLoading={isLoading} />
           {!isLoading && (
-            <TabViewer inflight={<FileViewer fileDetails={data} />} />
+            <Fade in={!isLoading} transition={{ enter: { duration: 2.5 } }}>
+              <TabViewer inflight={<FileViewer fileDetails={data} />} />
+            </Fade>
           )}
         </GridItem>
       </Grid>
