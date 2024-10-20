@@ -1,3 +1,4 @@
+import json
 from dataclasses import dataclass, field
 from os import DirEntry, scandir
 from typing import Dict, List
@@ -5,6 +6,7 @@ from typing import Dict, List
 from cachetools import TTLCache, cached
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import time
 
 app = FastAPI()
 
@@ -65,18 +67,25 @@ def scan(path: str, recursive: bool = True):
 @cached(cache=TTLCache(maxsize=1024, ttl=900))
 def get_inflight_files() -> List[Dict]:
     """Get in-flight 835 files"""
-    return [entry.to_json() for entry in scan(staging_dir) if entry.is_file()]
+    # ret = [entry.to_json() for entry in scan(staging_dir) if entry.is_file()]
+    time.sleep(2)
+    ret = json.load(open("./sample/sample.json", "r", encoding="utf-8"))
+    return ret
 
 
 @app.get("/ready")
 @cached(cache=TTLCache(maxsize=1024, ttl=900))
 def get_ready_files() -> List[Dict]:
     """Ready is the subset of files currently waiting in TP_5010 Output"""
-    return [entry.to_json() for entry in scan(tp5010_dir) if entry.is_file()]
+    # ret = [entry.to_json() for entry in scan(tp5010_dir) if entry.is_file()]
+    ret = json.load(open("./sample/sample.json", "r", encoding="utf-8"))
+    return ret
 
 
 @app.get("/archived")
 @cached(cache=TTLCache(maxsize=1024, ttl=900))
 def get_archived_files() -> List[Dict]:
     """Ready is the subset of files currently waiting in TP_5010 Output"""
-    return [entry.to_json() for entry in scan(archive_dir, recursive=False)]
+    # ret = [entry.to_json() for entry in scan(archive_dir, recursive=False)]
+    ret = json.load(open("./sample/sample.json", "r", encoding="utf-8"))
+    return ret

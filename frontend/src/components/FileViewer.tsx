@@ -1,11 +1,15 @@
 import {
-  Text,
+  Badge,
   Grid,
   GridItem,
-  Heading,
   HStack,
+  Icon,
+  Text,
   VStack,
 } from "@chakra-ui/react";
+import { IoPieChartOutline } from "react-icons/io5";
+
+import { IoFolderOpenOutline } from "react-icons/io5";
 
 export interface FileDetail {
   fullPath: string;
@@ -26,21 +30,41 @@ interface FileEntryProps {
   total: number;
 }
 const FileEntry = ({ folder, total }: FileEntryProps) => {
+  const centeredStyle = {
+    justifyContent: "center",
+    alignContent: "center",
+  };
+
   return (
     <Grid
       templateAreas={`"indicator count bar"`}
-      templateColumns={`"20px 50px 1fr"`}
-      gap={1}
-      justifyContent={"space-around"}
+      templateColumns={`"100px 50px 1fr"`}
+      templateRows={"60px"}
+      gap={3}
+      justifyContent={"left"}
+      w="100%"
+      p={4}
     >
-      <GridItem w="100%" area="indicator" bgColor="red">
-        <Text>Indicator</Text>
+      <GridItem pt={6} area="indicator" sx={centeredStyle}>
+        <Icon as={IoPieChartOutline} boxSize={8} />
       </GridItem>
-      <GridItem w="100%" area="count" bgColor="green">
-        <Text>{total}</Text>
+      <GridItem pt={4} area="count" sx={centeredStyle}>
+        <Badge
+          title={`${total} file(s) in ${folder}`}
+          sx={centeredStyle}
+          boxSize={10}
+          borderRadius={10}
+          shadow="md"
+        >
+          {total}
+        </Badge>
       </GridItem>
-      <GridItem w="100%" area="bar" bgColor="blue">
-        <Text>{folder}</Text>
+      <GridItem mt={4} area="bar" sx={centeredStyle}>
+        {/* we need a file indicator */}
+        <HStack p={2} shadow={"lg"} borderRadius={10}>
+          <Icon boxSize={6} as={IoFolderOpenOutline} />
+          <Text>{folder}</Text>
+        </HStack>
       </GridItem>
     </Grid>
   );
